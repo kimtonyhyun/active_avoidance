@@ -1,5 +1,5 @@
 // Pins
-#define START_TRIALS 52
+#define START_TRIALS 13
 #define ENC_A 2 // Needs to be an interrupt pin
 #define ENC_B 3 // Needs to be an interrupt pin
 #define ENC_I 4 // Not actually used
@@ -16,27 +16,28 @@ volatile int steps_bwd = 0;
 // Behavioral parameters
 #define SCOPE_PRE 2000  // Turn on scope prior to trial start, ms
 #define SCOPE_POST 2000 // Turn off scope after trial start
-#define CS_ON_DURATION 500 // ms
-#define CS_OFF_DURATION 500 // ms
-#define NUM_CS 6
-#define ITI_MIN 25000 // ms
-#define ITI_MAX 35000 // ms
+#define CS_DURATION 4000 // ms
+#define CS_GRACE 2500 // Grace period, ms. US will be disabled during 
+                      //  the initial CS_GRACE ms of a CS presentation
+#define ITI_MIN 5000 // ms
+#define ITI_MAX 30000 // ms
 
+#define CS_POLL_RATE 500 // ms
 #define THRESHOLD_STEPS 40 // Corresponds to 5 cm/s over 0.5 sec
 
 // FSM definitions
 #define S_IDLE 0
 #define S_PRE 1
 #define S_BEGIN_TRIAL 2
-#define S_CS_ON 3
-#define S_CS_OFF 4
+#define S_CS 3
 #define S_END_TRIAL 5
 #define S_POST 6
 #define S_ITI 7
 
 int state = S_IDLE;
-int cs_idx = 0;
-bool enable_us = true;
+int cs_elapsed_time;
+bool enable_cs;
+bool enable_us;
 
 void setup() {
   // put your setup code here, to run once:
@@ -90,41 +91,29 @@ void loop() {
 
       case S_BEGIN_TRIAL:
         digitalWrite(TRIAL_OUT, 1);
-        cs_idx = 1;
+        state = S_CS;
+        break;
+
+      case S_CS:
+        enable_cs = true;
         enable_us = true;
-        state = S_CS_ON;
-        break;
-
-      case S_CS_ON:
-        digitalWrite(CS_OUT, 1);
-        if (cs_idx >= 3)
-          digitalWrite(US_OUT, enable_us);
-          
-        steps_fwd = 0;
-        steps_bwd = 0;
-        delay(CS_ON_DURATION);
-        if (steps_fwd - steps_bwd > THRESHOLD_STEPS)
-          enable_us = false;
-
-        if (cs_idx < NUM_CS)
-          state = S_CS_OFF;
-        else
-          state = S_END_TRIAL;
-        break;
+        cs_elapsed_time = 0;
         
-     case S_CS_OFF:
-        digitalWrite(CS_OUT, 0);
-        if (cs_idx >= 2)
-          digitalWrite(US_OUT, enable_us);
- 
-        steps_fwd = 0;
-        steps_bwd = 0;
-        delay(CS_OFF_DURATION);
-        if (steps_fwd - steps_bwd > THRESHOLD_STEPS)
-          enable_us = false;
-
-        cs_idx++;
-        state = S_CS_ON;
+        while (cs_elapsed_time < CS_DURATION) {
+          digitalWrite(CS_OUT, enable_cs);
+          digitalWrite(US_OUT, (cs_elapsed_time >= CS_GRACE) && enable_us);
+          
+          steps_fwd = 0;
+          steps_bwd = 0;
+          delay(CS_POLL_RATE);
+          if (steps_fwd - steps_bwd > THRESHOLD_STEPS) {
+            enable_cs = false;
+            enable_us = false;
+          }
+          
+          cs_elapsed_time += CS_POLL_RATE; 
+        }
+        state = S_END_TRIAL;
         break;
 
       case S_END_TRIAL:
