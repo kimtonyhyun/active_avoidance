@@ -18,5 +18,8 @@ nav_order: 3
 ## Initial placement
 
 Place elements on the bottom-side of the apparatus, as shown below:
+![Initial placement of items on the bottom-side of the board](bottom_side_initial.jpg).
 
-For the four ``legs'', I recommend using at least 2 inch tall posts.
+Some minor comments:
+- For the four legs, I recommend using at least 2 inch tall posts.
+- The WAV Trigger mount needs to be screwed on with "low-profile" (i.e. smaller head) screws.
