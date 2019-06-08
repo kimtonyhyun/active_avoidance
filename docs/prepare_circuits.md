@@ -4,9 +4,11 @@ title: 1. Prepare circuits
 nav_order: 2
 ---
 
-## Prepare "4-pin bus" circuit board
+## Prepare "4pin-bus" circuit board
 
-Solder header pins on the "4-pin bus" circuit board, as shown below:
+Link to OSH Park where the board can be ordered: [4pin-bus](https://oshpark.com/shared_projects/qv0rC8Yo)
+
+Solder header pins on the "4pin-bus" circuit board, as shown below:
 
 Note that one of the header sets protrudes bidirectionally.
 
