@@ -36,7 +36,7 @@ Solder three sets of header pins on the WAV Trigger board, as shown below:
 Next, apply a solder jumper to the jumper location indicated by "5V", as below:
 ![Solder jumper for 5V](wav_trigger_solderjumper.jpg)
 
-For more information, see [WAV Trigger user guide](https://robertsonics.com/wav-trigger-online-user-guide/#chapter1)
+For more information on the jumper, see [WAV Trigger user guide](https://robertsonics.com/wav-trigger-online-user-guide/#chapter1)
 
 ## Load the SD card
 
