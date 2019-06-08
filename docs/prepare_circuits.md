@@ -49,3 +49,7 @@ Using the above hardware, copy over the two files located [here](https://github.
 The WAV file is the auditory (linear) sweep, from 2 kHz to 6 kHz over 5 seconds. The INI file provides settings for the WAV Trigger board. (For more info see [WAV Trigger user guide](http://robertsonics.com/wav-trigger-online-user-guide/#chapter8).)
 
 After the two files have been loaded onto the SD card, insert the card into the WAV Trigger board until it clicks once.
+
+## Prepare the speaker (optional)
+
+Solder wires onto a standalone speaker, as shown below:
