@@ -21,3 +21,8 @@ We need 3 "4-pin bus" circuit boards _per_ active avoidance setup.
 
 Solder three sets of header pins on the WAV Trigger board, as shown below:
 ![WAV Trigger board with header pins](wav_trigger.jpg)
+
+Next, apply a solder jumper to the jumper location indicated by "5V", as below:
+![Solder jumper for 5V](wav_trigger_solderjumper.jpg)
+
+For more information, see [WAV Trigger user guide](https://robertsonics.com/wav-trigger-online-user-guide/#chapter1)
