@@ -9,6 +9,7 @@ nav_order: 2
 Link to OSH Park where the board can be ordered: [4pin-bus](https://oshpark.com/shared_projects/qv0rC8Yo)
 
 Solder header pins on the "4pin-bus" circuit board, as shown below:
+![Finished 4pin-bus circuit board](4pin_bus.jpg)
 
 Note that one of the header sets protrudes bidirectionally.
 
@@ -19,3 +20,4 @@ We need 3 "4-pin bus" circuit boards _per_ active avoidance setup.
 ## Prepare WAV Trigger board
 
 Solder three sets of header pins on the WAV Trigger board, as shown below:
+![WAV Trigger board with header pins](wav_trigger.jpg)
