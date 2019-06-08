@@ -4,4 +4,10 @@ title: 1. Prepare circuits
 nav_order: 2
 ---
 
-Test
+## Prepare "4-pin bus" circuit board
+
+Solder header pins on the "4-pin bus" circuit board, as shown below:
+
+Note that one of the header sets protrudes bidirectionally.
+
+This small circuit board lets us conveniently sample electrical signals (e.g. with Saleae). You can populate the other header slots as well, but the photo shows the minimal number of headers necessary.
