@@ -39,3 +39,13 @@ Next, apply a solder jumper to the jumper location indicated by "5V", as below:
 For more information, see [WAV Trigger user guide](https://robertsonics.com/wav-trigger-online-user-guide/#chapter1)
 
 ## Load the SD card
+
+I use:
+- [1 GB SD card from Sparkfun](https://www.sparkfun.com/products/15107), and
+- [USB card reader from Amazon](https://www.amazon.com/IOGEAR-MicroSD-Reader-Writer-GFR204SD/dp/B0046TJG1U)
+
+Using the above hardware, copy over the two files located [here](../sd_card) onto the SD card.
+
+The WAV file is the auditory (linear) sweep, from 2 kHz to 6 kHz over 5 seconds. The INI file provides settings for the WAV Trigger board. (For more info see [WAV Trigger user guide](http://robertsonics.com/wav-trigger-online-user-guide/#chapter8).)
+
+After the two files have been loaded onto the SD card, insert the card into the WAV Trigger board until it clicks once.
