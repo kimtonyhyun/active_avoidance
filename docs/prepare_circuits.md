@@ -4,6 +4,10 @@ title: 1. Prepare circuits
 nav_order: 2
 ---
 
+{:toc}
+
+---
+
 ## Prepare "4pin-bus" circuit board
 
 Link to OSH Park where the board can be ordered: [4pin-bus](https://oshpark.com/shared_projects/qv0rC8Yo)
@@ -26,3 +30,5 @@ Next, apply a solder jumper to the jumper location indicated by "5V", as below:
 ![Solder jumper for 5V](wav_trigger_solderjumper.jpg)
 
 For more information, see [WAV Trigger user guide](https://robertsonics.com/wav-trigger-online-user-guide/#chapter1)
+
+## Load the SD card
