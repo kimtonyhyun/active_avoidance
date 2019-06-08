@@ -50,6 +50,10 @@ The WAV file is the auditory (linear) sweep, from 2 kHz to 6 kHz over 5 seconds.
 
 After the two files have been loaded onto the SD card, insert the card into the WAV Trigger board until it clicks once.
 
+## Prepare the BNC panel
+
+(To be continued...)
+
 ## Prepare the speaker (optional)
 
 Solder wires onto a standalone speaker, as shown below:
