@@ -53,3 +53,4 @@ After the two files have been loaded onto the SD card, insert the card into the 
 ## Prepare the speaker (optional)
 
 Solder wires onto a standalone speaker, as shown below:
+![Soldered speakers](speakers.jpg)
