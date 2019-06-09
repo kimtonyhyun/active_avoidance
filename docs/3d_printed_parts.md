@@ -23,6 +23,10 @@ Tap the Arduino and WAV Trigger mounts with #4-40 threads. Four locations per mo
 Next, tap the side of the BNC panel mount with #8-32 thread. You'll need two pieces per setup:
 ![#8-32 tap location for the BNC panel mount](panel_mount.jpg)
 
-## Assemble the wheel
+## Assemble the encoder and wheel
 
-Insert a #8-32 nut into the slot of the encoder mount:
+Insert a #8-32 nut into the slot of the encoder mount. This allows you to connect the mount with a standard Thorlabs 1/2" diameter post:
+![Insert a #8-32 nut into the encoder mount slot](encoder_base_nut.jpg)
+
+Next, mount the HB5M encoder using four #4-40 screws:
+![Mount the HB5M encoder](encoder_base_top.jpg).
