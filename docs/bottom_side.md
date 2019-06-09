@@ -22,4 +22,5 @@ Place elements on the bottom-side of the apparatus, as shown below. The board sh
 
 Some minor comments:
 - For the four legs, I recommend using at least 2 inch tall posts (e.g. [RS2P](https://www.thorlabs.com/thorproduct.cfm?partnumber=RS2P)).
-- The WAV Trigger mount needs to be screwed on with "low-profile" (i.e. smaller head) screws, for example [92220A182](https://www.mcmaster.com/92220a182) from McMaster-Carr.
+- The WAV Trigger mount needs to be screwed on with "low-profile" (i.e. smaller head) #1/4"-20 screws, for example [92220A182](https://www.mcmaster.com/92220a182) from McMaster-Carr.
+- The panel mounts also need low-profile screws, but longer lengths. For example: [92220A185](https://www.mcmaster.com/92220a185) from McMaster-Carr. (I recommend stocking multiple lengths.)
