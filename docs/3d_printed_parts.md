@@ -25,3 +25,4 @@ Next, tap the side of the BNC panel mount with #8-32 thread. You'll need two pie
 
 ## Assemble the wheel
 
+Insert a #8-32 nut into the slot of the encoder mount:
