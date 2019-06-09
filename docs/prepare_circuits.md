@@ -24,7 +24,7 @@ Solder header pins on the "4pin-bus" circuit board, as shown below:
 
 Note that one of the header sets (left one, in above picture) protrudes bidirectionally.
 
-This small circuit board lets us conveniently sample electrical signals (e.g. with Saleae). You can populate the other header slots as well, but the photo shows the minimal number of headers necessary.
+This small circuit board lets us conveniently sample electrical signals (e.g. with Saleae). You can populate the other header slots as well, but the photo shows the minimal number of headers necessary. You can also use right angle headers (as shown) or straight ones.
 
 We need 3 "4-pin bus" circuit boards per active avoidance setup.
 
