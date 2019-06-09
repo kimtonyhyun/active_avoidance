@@ -46,7 +46,9 @@ I use:
 
 Using the above hardware, copy over the two files located [here](https://github.com/kimtonyhyun/active_avoidance/tree/master/sd_card) onto the SD card.
 
-The WAV file is the auditory (linear) sweep, from 2 kHz to 6 kHz over 5 seconds. The INI file provides settings for the WAV Trigger board. (For more info see [WAV Trigger user guide](http://robertsonics.com/wav-trigger-online-user-guide/#chapter8).)
+The WAV file is the auditory (linear) sweep, from 2 kHz to 6 kHz over 5 seconds. I used [this Matlab script](https://github.com/kimtonyhyun/active_avoidance/blob/master/scripts/wavegen.m) to generate the WAV file.
+
+The INI file provides settings for the WAV Trigger board. (For more info see [WAV Trigger user guide](http://robertsonics.com/wav-trigger-online-user-guide/#chapter8).)
 
 After the two files have been loaded onto the SD card, insert the card into the WAV Trigger board until it clicks once.
 
