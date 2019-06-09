@@ -1,10 +1,10 @@
 ---
 layout: default
-title: 2. Bottom-side of apparatus
+title: 2. Bottom side of apparatus
 nav_order: 3
 ---
 
-# 2. Bottom-side of the apparatus
+# 2. Bottom side of the apparatus
 {: .no_toc }
 
 ## Table of contents
