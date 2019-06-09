@@ -30,3 +30,12 @@ Insert a #8-32 nut into the slot of the encoder mount. This allows you to connec
 
 Next, mount the HB5M encoder using four #4-40 screws:
 ![Mount the HB5M encoder](encoder_base_top.jpg).
+
+Thread the "side" holes of the wheel adapter part with a #4-40 tap, as shown below:
+![Tap #4-40 holes on the side of the wheel adapter](wheel_adapter.jpg)
+
+Use a #4-40 set screw to secure the wheel adapter to the stem of the InnoVive wheel:
+![Secure the adapter to the InnoVive wheel](wheel_adapter_secure.jpg)
+
+Finally, secure the wheel and adapter to the encoder by using the set screws of the encoder:
+![Connect the wheel and adapter to the encoder](wheel_to_encoder.jpg)
