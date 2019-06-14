@@ -54,7 +54,14 @@ After the two files have been loaded onto the SD card, insert the card into the 
 
 ## Prepare the BNC panel
 
-(To be continued...)
+Populate the BNC panel as follows:
+![Front view of the BNC panel](bnc_panel_front.jpg)
+
+I use the following components from Digikey:
+- Toggle switch: [EG2350-ND](https://www.digikey.com/products/en?keywords=eg2350-nd)
+- Non-isolating BNC bulkhead: [ACX1046-ND](https://www.digikey.com/products/en?keywords=acx1046-nd)
+
+Viewed from the back, the components should be wired up as follows:
 
 ## Prepare the speaker (optional)
 
