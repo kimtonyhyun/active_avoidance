@@ -64,6 +64,14 @@ Finally, if you are planning on using an OEM speaker module, you can connect tha
 ## Wire up the encoder
 
 The pinout for the HB5M encoder can be seen on the bottom side of the device. Signals "A", "B", and "I" are encoder readouts, whereas "5V" and "GND" are power lines:
+
 ![HB5M pinout](encoder_pinout.jpg)
+
+On the Arduino side, the encoder power wires (red and black) are routed to the "5V" and "GND" pins of the Arduino. As for the encoder signals:
+- Encoder A (white) is routed to Arduino pin 2,
+- Encoder B (brown) is routed to Arduino pin 3,
+- Encoder I (green) is routed to Arduino pin 4.
+
+![HB5M-to-Arduino wiring](encoder_to_arduino.jpg)
 
 ## Wire up Saleae
