@@ -44,3 +44,9 @@ The final "4pin-bus" board goes on 5V, GND, GND, Vin pins of the Arduino:
 ## Wire up the BNC panel
 
 First, mount the populated BNC panel onto the board using #8-32 screws on the adapters:
+
+## Wire up the WAV Trigger
+
+## Wire up the encoder
+
+## Wire up Saleae
