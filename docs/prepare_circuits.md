@@ -62,6 +62,14 @@ I use the following components from Digikey:
 - Non-isolating BNC bulkhead: [ACX1046-ND](https://www.digikey.com/products/en?keywords=acx1046-nd)
 
 Viewed from the back, the components should be wired up as follows:
+![Rear view of the BNC panel](bnc_panel_rear.jpg)
+
+Here, the color code is:
+- Green/yellow: Electrical ground
+- Gray: Middle pole of the switch
+- Red: Scope enable
+- Orange: US
+which we will refer to later in the instructions.
 
 ## Prepare the speaker (optional)
 
