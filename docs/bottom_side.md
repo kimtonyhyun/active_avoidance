@@ -52,6 +52,13 @@ I use a 1x1 female header socket to connect the red wire (scope enable) to pin 2
 
 ## Wire up the WAV Trigger
 
+We first need to provide power to the WAV Trigger board. From the Arduino board, I tapped off 5V (red wire) and GND (green/yellow wire) and routed it to the power input pins of the WAV Trigger board:
+![Powering the WAV Trigger board](wav_power.jpg)
+
+Next, I connected pin 27 of the Arduino ("CS" signal) to the trigger input ("T1") of the WAV Trigger board. In the photo below, this connection is made with a blue wire:
+![Connect the trigger cable](wav_trig.jpg)
+
+
 ## Wire up the encoder
 
 ## Wire up Saleae
