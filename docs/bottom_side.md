@@ -26,5 +26,21 @@ Some comments:
 - The panel mounts also need low-profile screws, but longer lengths. For example: [92220A185](https://www.mcmaster.com/92220a185) from McMaster-Carr. (I recommend stocking multiple lengths.)
 
 Next, mount the WAV Trigger board using #4-40 screws as follows. In the picture, I also mounted the three "4pin-bus" circuit boards on the Arduino:
+![WAV Trigger board mounted](bottom_with_wav.jpg).
 
 ## Place the 4pin-bus boards on the Arduino
+
+Here are more detailed photographs showing the placement of the three "4pin-bus" circuit boards.
+
+First "4pin-bus" board goes on pins 2, 3, 4, 5 of the Arduino:
+![First 4pin-bus placement](4pin_first.jpg)
+
+The second "4pin-bus" board goes on pins 23, 25, 27, 29 of the Arduino:
+![Second 4pin-bus placement](4pin_second.jpg)
+
+The final "4pin-bus" board goes on 5V, GND, GND, Vin pins of the Arduino:
+![Third 4pin-bus placement](4pin_third.jpg)
+
+## Wire up the BNC panel
+
+First, mount the populated BNC panel onto the board using #8-32 screws on the adapters:
