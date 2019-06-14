@@ -69,7 +69,8 @@ Here, the color code is:
 - Gray: Middle pole of the switch
 - Red: Scope enable
 - Orange: US
-which we will refer to later in the instructions.
+
+We will refer to these colors later in the instructions.
 
 ## Prepare the speaker (optional)
 
