@@ -44,6 +44,11 @@ The final "4pin-bus" board goes on 5V, GND, GND, Vin pins of the Arduino:
 ## Wire up the BNC panel
 
 First, mount the populated BNC panel onto the board using #8-32 screws on the adapters:
+![Assembled BNC panel](bnc_panel_wiring.jpg)
+
+I use a 2x1 male header pin to connect the gray wire (center pole of the switch) to pin 13 of the Arduino, and the green/yellow wire (panel ground) to GND pin of the Arduino.
+
+I use a 1x1 female header socket to connect the red wire (scope enable) to pin 23 of the Arduino. Similarly, the orange wire (US) is connected to pin 29 of the Arduino.
 
 ## Wire up the WAV Trigger
 
