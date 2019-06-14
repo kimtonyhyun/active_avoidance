@@ -58,6 +58,8 @@ We first need to provide power to the WAV Trigger board. From the Arduino board,
 Next, I connected pin 27 of the Arduino ("CS" signal) to the trigger input ("T1") of the WAV Trigger board. In the photo below, this connection is made with a blue wire:
 ![Connect the trigger cable](wav_trig.jpg)
 
+Finally, if you are planning on using an OEM speaker module, you can connect that to the WAV Trigger board as shown below:
+![Connecting a speaker module](wav_speaker.jpg)
 
 ## Wire up the encoder
 
