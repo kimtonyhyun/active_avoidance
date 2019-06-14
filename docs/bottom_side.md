@@ -63,4 +63,7 @@ Finally, if you are planning on using an OEM speaker module, you can connect tha
 
 ## Wire up the encoder
 
+The pinout for the HB5M encoder can be seen on the bottom side of the device. Signals "A", "B", and "I" are encoder readouts, whereas "5V" and "GND" are power lines:
+![HB5M pinout](encoder_pinout.jpg)
+
 ## Wire up Saleae
