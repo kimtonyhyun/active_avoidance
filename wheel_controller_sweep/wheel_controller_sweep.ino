@@ -63,7 +63,7 @@ void count_A() {
 }
 
 void loop() {
-  bool trials_enabled = digitalRead(START_TRIALS);
+  bool trials_enabled = !digitalRead(START_TRIALS);
   if (!trials_enabled) {
     // Controller should be disabled
     digitalWrite(SCOPE_OUT, 0);
