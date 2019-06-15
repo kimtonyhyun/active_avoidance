@@ -75,3 +75,6 @@ On the Arduino side, the encoder power wires (red and black) are routed to the "
 ![HB5M-to-Arduino wiring](encoder_to_arduino.jpg)
 
 ## Wire up Saleae
+
+Position the Saleae as shown below. I use double sided tape (the ["Nitto" tape](https://www.amazon.com/Nitto-Permacel-P-02-Double-Coated/dp/B000QC2442/) works particularly well) to secure the Saleae to the platform:
+![Position the Saleae on the board](saleae_positioning.jpg)
