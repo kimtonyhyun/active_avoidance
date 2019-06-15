@@ -52,6 +52,8 @@ The INI file provides settings for the WAV Trigger board. (For more info see [WA
 
 After the two files have been loaded onto the SD card, insert the card into the WAV Trigger board until it clicks once.
 
+__Make sure that the Load/Run slider switch is in the Run position!__
+
 ## Prepare the BNC panel
 
 Populate the BNC panel as follows:
