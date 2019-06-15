@@ -24,4 +24,6 @@ Connect the Arduino to the computer using a USB cable. You may need to adjust th
 
 After setting the board parameters, upload the firmware ("sketch") onto the Arduino by "Sketch --> Upload (Ctrl+U)" drop down menu.
 
+After uploading the sketch, the USB cable can be removed. The Arduino board will retain the firmware even when powered down. During regular operation, the Arduino can be powered via the USB cable or via a "wall wart" power supply (e.g. this [9V supply from Sparkfun](https://www.sparkfun.com/products/15314); though any supply from 5V to 12V will work here).
+
 ## Run Saleae
