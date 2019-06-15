@@ -35,3 +35,8 @@ Note that all signals are digital. I recommend that you label each channel with 
 
 At this point, if you switch on the apparatus using the flip switch (and, of course, the Arduino is powered), then you should be able to observe the following with the Saleae, and hear the sweep tone accordingly:
 ![Saleae trial run](saleae_example_recording.PNG)
+
+## Troubleshooting
+
+Not hearing the sweep tone?
+- Is the slide switch on the WAV Trigger board set to "Run"?
