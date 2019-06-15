@@ -22,4 +22,6 @@ Open the apparatus firmware ([wheel_controller_sweep.ino](https://github.com/kim
 Connect the Arduino to the computer using a USB cable. You may need to adjust the Arduino parameters (i.e. we are using the Arduino Mega 2560 board) in the "Tools" dropdown menu, as shown below:
 ![Arduino board settings](program_arduino.png)
 
+After setting the board parameters, upload the firmware ("sketch") onto the Arduino by "Sketch --> Upload (Ctrl+U)" drop down menu.
+
 ## Run Saleae
