@@ -78,3 +78,6 @@ On the Arduino side, the encoder power wires (red and black) are routed to the "
 
 Position the Saleae as shown below. I use double sided tape (the ["Nitto" tape](https://www.amazon.com/Nitto-Permacel-P-02-Double-Coated/dp/B000QC2442/) works particularly well) to secure the Saleae to the platform:
 ![Position the Saleae on the board](saleae_positioning.jpg)
+
+Next, directly solder Channel 7 of Saleae (purple wire; note that Saleae channel index starts from 0) and its associated ground wire to the BNC port labeled "Frame clock".
+![Solder Channel 7 of Saleae to the Frame clock BNC](saleae_frame_clk.jpg)
