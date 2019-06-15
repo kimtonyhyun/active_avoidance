@@ -18,3 +18,4 @@ nav_order: 5
 ## Place the wheel
 
 Mount the wheel and encoder on the top side of the apparatus using standard optomechanical hardware:
+![Mount the wheel and encoder on the top side of the apparatus](mounted_wheel.jpg)
