@@ -81,3 +81,18 @@ Position the Saleae as shown below. I use double sided tape (the ["Nitto" tape](
 
 Next, directly solder Channel 7 of Saleae (purple wire; note that Saleae channel index starts from 0) and its associated ground wire to the BNC port labeled "Frame clock".
 ![Solder Channel 7 of Saleae to the Frame clock BNC](saleae_frame_clk.jpg)
+
+Then connect the remaining channels of Saleae according to the following table:
+
+| Saleae       | Arduino | Function     |
+|--------------|---------|--------------|
+| Ch0 (black)  | Pin 2   | Encoder A    |
+| Ch1 (brown)  | Pin 3   | Encoder B    |
+| Ch2 (red)    | Pin 4   | Encoder I    |
+| Ch3 (orange) | Pin 23  | Scope enable |
+| Ch4 (yellow) | Pin 25  | Trial clock  |
+| Ch5 (green)  | Pin 27  | CS           |
+| Ch6 (blue)   | Pin 29  | US           |
+
+The complete Saleae wiring should look like as follows:
+![Saleae wiring](saleae_all_channels.jpg)
