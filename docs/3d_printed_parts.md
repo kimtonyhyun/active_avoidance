@@ -25,7 +25,7 @@ Next, tap the side of the [BNC panel mount](https://github.com/kimtonyhyun/activ
 
 ## Assemble the encoder and wheel
 
-Insert a #8-32 nut into the slot of the encoder mount. This allows you to connect the mount with a standard Thorlabs 1/2" diameter post:
+Insert a #8-32 nut into the slot of the [encoder mount](https://github.com/kimtonyhyun/active_avoidance/blob/master/stl/holder_usdigital_base.stl). This allows you to connect the mount with a standard Thorlabs 1/2" diameter post:
 ![Insert a #8-32 nut into the encoder mount slot](encoder_base_nut.jpg)
 
 Next, mount the HB5M encoder using four #4-40 screws:
