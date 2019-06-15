@@ -20,7 +20,7 @@ nav_order: 3
 Tap the Arduino and WAV Trigger mounts with #4-40 threads. Four locations per mount, as indicated with the yellow circle below:
 ![#4-40 tap locations for the Arduino and WAV Trigger mounts](arduino_wav_mounts.jpg).
 
-Next, tap the side of the BNC panel mount with #8-32 thread. You'll need two pieces per setup:
+Next, tap the side of the [BNC panel mount](https://github.com/kimtonyhyun/active_avoidance/blob/master/stl/aa_panel_adapter.stl) with #8-32 thread. You'll need two pieces per setup:
 ![#8-32 tap location for the BNC panel mount](panel_mount.jpg)
 
 ## Assemble the encoder and wheel
