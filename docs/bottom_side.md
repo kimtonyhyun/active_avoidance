@@ -94,5 +94,8 @@ Then connect the remaining channels of Saleae according to the following table:
 | Ch5 (green)  | Pin 27  | CS           |
 | Ch6 (blue)   | Pin 29  | US           |
 
+The ground wires of the Saleae are redundant. However, I like to take at least two of the Saleae ground wires (any two) and connect them to the ground pins of the Arduino as shown below:
+![Saleae grounding](saleae_grounding.jpg)
+
 The complete Saleae wiring should look like as follows:
 ![Saleae wiring](saleae_all_channels.jpg)
