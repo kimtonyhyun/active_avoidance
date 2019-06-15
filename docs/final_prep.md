@@ -27,3 +27,11 @@ After setting the board parameters, upload the firmware ("sketch") onto the Ardu
 After uploading the sketch, the USB cable can be removed. The Arduino board will retain the firmware even when powered down. During regular operation, the Arduino can be powered via the USB cable or via a "wall wart" power supply (e.g. this [9V supply from Sparkfun](https://www.sparkfun.com/products/15314); though any supply from 5V to 12V will work here).
 
 ## Run Saleae
+
+Connect the Saleae to the PC using a USB cable. In the "Logic" software (at the time of writing, I recommend using [version 1.2.29](https://support.saleae.com/logic-software/latest-beta-release)), set up the device as follows:
+![Saleae settings](saleae_setup.PNG)
+
+Note that all signals are digital. I recommend that you label each channel with meaningful names (e.g. Channel 7 is "Frame clock").
+
+At this point, if you switch on the apparatus using the flip switch (and, of course, the Arduino is powered), then you should be able to observe the following with the Saleae, and hear the sweep tone accordingly:
+![Saleae trial run](saleae_example_recording.PNG)
