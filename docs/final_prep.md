@@ -19,7 +19,7 @@ nav_order: 6
 
 Open the apparatus firmware ([wheel_controller_sweep.ino](https://github.com/kimtonyhyun/active_avoidance/blob/master/wheel_controller_sweep/wheel_controller_sweep.ino)) in the Arduino IDE.
 
-Connect the Arduino to the computer using a USB cable. You may need to adjust the Arduino parameters (i.e. we are using the Arduino Mega 2560 board) in the "Tools" dropdown menu, as shown below:
+Connect the Arduino to the computer using a USB cable. You may need to adjust the Arduino parameters (i.e. we are using the Arduino Mega 2560 board) in the "Tools" dropdown menu, as shown below. In particular, set the "Board", "Processor", "Port" appropriately (the exact COM # may differ from the screenshot):
 ![Arduino board settings](program_arduino.png)
 
 After setting the board parameters, upload the firmware ("sketch") onto the Arduino by "Sketch --> Upload (Ctrl+U)" drop down menu.
