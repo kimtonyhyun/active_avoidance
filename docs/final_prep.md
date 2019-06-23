@@ -39,4 +39,4 @@ At this point, if you switch on the apparatus using the flip switch (and, of cou
 ## Troubleshooting
 
 Not hearing the sweep tone?
-- Is the slide switch on the WAV Trigger board set to "Run"?
+- Is the slide switch on the WAV Trigger board set to "Run"? (Note: After the switch is set to "Run", the device must be power-cycled.)
