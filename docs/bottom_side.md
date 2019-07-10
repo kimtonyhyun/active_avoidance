@@ -28,6 +28,8 @@ Some comments:
 Next, mount the WAV Trigger board using #4-40 screws as follows. In the picture, I also mounted the three "4pin-bus" circuit boards on the Arduino:
 ![WAV Trigger board mounted](bottom_with_wav.jpg).
 
+---
+
 ## Place the 4pin-bus boards on the Arduino
 
 Here are more detailed photographs showing the placement of the three "4pin-bus" circuit boards.
@@ -41,6 +43,8 @@ The second "4pin-bus" board goes on pins 23, 25, 27, 29 of the Arduino:
 The final "4pin-bus" board goes on 5V, GND, GND, Vin pins of the Arduino:
 ![Third 4pin-bus placement](4pin_third.jpg)
 
+---
+
 ## Wire up the BNC panel
 
 First, mount the populated BNC panel onto the board using #8-32 screws on the adapters:
@@ -49,6 +53,8 @@ First, mount the populated BNC panel onto the board using #8-32 screws on the ad
 I use a 2x1 male header pin to connect the gray wire (center pole of the switch) to pin 13 of the Arduino, and the green/yellow wire (panel ground) to the adjacent GND pin of the Arduino.
 
 I use a 1x1 female header socket to connect the red wire (scope enable) to pin 23 of the Arduino. Similarly, the orange wire (US) is connected to pin 29 of the Arduino.
+
+---
 
 ## Wire up the WAV Trigger
 
@@ -60,6 +66,8 @@ Next, I connected pin 27 of the Arduino ("CS" signal) to the trigger input ("T1"
 
 Finally, if you are planning on using an OEM speaker module, you can connect that to the WAV Trigger board as shown below:
 ![Connecting a speaker module](wav_speaker.jpg)
+
+---
 
 ## Wire up the encoder
 
@@ -73,6 +81,8 @@ On the Arduino side, the encoder power wires (red and black) are routed to the "
 - Encoder I (green) is routed to Arduino pin 4.
 
 ![HB5M-to-Arduino wiring](encoder_to_arduino.jpg)
+
+---
 
 ## Wire up Saleae
 
