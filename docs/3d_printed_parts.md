@@ -23,6 +23,8 @@ Tap the [Arduino](https://github.com/kimtonyhyun/active_avoidance/blob/master/st
 Next, tap the side of the [BNC panel mount](https://github.com/kimtonyhyun/active_avoidance/blob/master/stl/aa_panel_adapter.stl) with #8-32 thread. You'll need two pieces per setup:
 ![#8-32 tap location for the BNC panel mount](panel_mount.jpg)
 
+---
+
 ## Assemble the encoder and wheel
 
 Insert a #8-32 nut into the slot of the [encoder mount](https://github.com/kimtonyhyun/active_avoidance/blob/master/stl/holder_usdigital_base.stl). This allows you to connect the mount with a standard Thorlabs 1/2" diameter post:
