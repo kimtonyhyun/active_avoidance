@@ -28,6 +28,8 @@ This small circuit board lets us conveniently sample electrical signals (e.g. wi
 
 We need 3 "4-pin bus" circuit boards per active avoidance setup.
 
+---
+
 ## Prepare WAV Trigger board
 
 Solder three sets of header pins on the WAV Trigger board, as shown below:
@@ -37,6 +39,8 @@ Next, apply a solder jumper to the jumper location indicated by "5V", as below:
 ![Solder jumper for 5V](wav_trigger_solderjumper.jpg)
 
 For more information on the jumper, see [WAV Trigger user guide](https://robertsonics.com/wav-trigger-online-user-guide/#chapter1)
+
+---
 
 ## Load the SD card
 
@@ -53,6 +57,8 @@ The INI file provides settings for the WAV Trigger board. (For more info see [WA
 After the two files have been loaded onto the SD card, insert the card into the WAV Trigger board until it clicks once.
 
 __Make sure that the Load/Run slider switch is in the Run position!__
+
+---
 
 ## Prepare the BNC panel
 
@@ -73,6 +79,8 @@ Here, the color code is:
 - Orange: US
 
 We will refer to these colors later in the instructions.
+
+---
 
 ## Prepare the speaker (optional)
 
