@@ -50,7 +50,7 @@ I use:
 
 Using the above hardware, copy over the two files located [here](https://github.com/kimtonyhyun/active_avoidance/tree/master/sd_card) onto the SD card.
 
-The WAV file is the auditory (linear) sweep, from 2 kHz to 6 kHz over 5 seconds. I used [this Matlab script](https://github.com/kimtonyhyun/active_avoidance/blob/master/scripts/wavegen.m) to generate the WAV file. While the "standard" active avoidance protocol uses 4 second trial (and thus CS) periods, I made the WAV file to be 5 seconds long, as to avoid any odd auditory effects at the end of the file.
+The WAV file is the auditory (linear) sweep, from 2 kHz to 6 kHz over 5 seconds. I used [this Matlab script](https://github.com/kimtonyhyun/active_avoidance/blob/master/scripts/wavegen.m) to generate the WAV file. While the standard active avoidance protocol uses 4 second trial (and thus CS) periods, I made the WAV file to be 5 seconds long, as to avoid any odd auditory effects at the end of the file.
 
 The INI file provides settings for the WAV Trigger board. (For more info see [WAV Trigger user guide](http://robertsonics.com/wav-trigger-online-user-guide/#chapter8).)
 
