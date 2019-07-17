@@ -1,4 +1,5 @@
 // Pins
+//------------------------------------------------------------
 #define START_TRIALS 13
 #define ENC_A 2 // Needs to be an interrupt pin
 #define ENC_B 3 // Needs to be an interrupt pin
@@ -8,24 +9,30 @@
 #define TRIAL_OUT 25
 #define CS_OUT 27
 #define US_OUT 29
-
-// Encoder counters
-volatile int steps_fwd = 0;
-volatile int steps_bwd = 0;
+#define WAS_STILL_OUT 5
 
 // Behavioral parameters
-#define SCOPE_PRE 2000  // Turn on scope prior to trial start, ms
-#define SCOPE_POST 2000 // Turn off scope after trial start
+//------------------------------------------------------------
+#define SCOPE_PRE 10000  // Turn on scope prior to trial start, ms
+#define SCOPE_POST 10000 // Turn off scope after trial start
+
 #define CS_DURATION 4000 // ms
-#define CS_GRACE 2500 // Grace period, ms. US will be disabled during 
-                      //  the initial CS_GRACE ms of a CS presentation
-#define ITI_MIN 5000 // ms
+#define CS_GRACE 3500 // Grace period, ms. US will be disabled during 
+                      //  the initial CS_GRACE of a CS presentation
+
+#define ITI_MIN 22000 // ms, Needs to be greater than SCOPE_PRE + SCOPE_POST
 #define ITI_MAX 30000 // ms
 
-#define CS_POLL_RATE 500 // ms
-#define THRESHOLD_STEPS 40 // Corresponds to 5 cm/s over 0.5 sec
+#define CS_POLL_RATE 250 // ms
+
+// The velocity calculations assume:
+//  - 5 cm wheel radius
+//  - 500 encoder clicks per full rotation
+#define STILL_THRESHOLD 10 // Corresponds to ~2.5 cm/s over 0.25 sec
+#define RUNNING_THRESHOLD 40 // Corresponds to ~10 cm/s over 0.25 sec
 
 // FSM definitions
+//------------------------------------------------------------
 #define S_IDLE 0
 #define S_PRE 1
 #define S_BEGIN_TRIAL 2
@@ -36,6 +43,7 @@ volatile int steps_bwd = 0;
 
 int state = S_IDLE;
 int cs_elapsed_time;
+bool was_still;
 bool enable_cs;
 bool enable_us;
 
@@ -51,9 +59,14 @@ void setup() {
   pinMode(TRIAL_OUT, OUTPUT);
   pinMode(CS_OUT, OUTPUT);
   pinMode(US_OUT, OUTPUT);
+  pinMode(WAS_STILL_OUT, OUTPUT);
   
   state = S_IDLE;
 }
+
+// Encoder counters
+volatile int steps_fwd = 0;
+volatile int steps_bwd = 0;
 
 void count_A() {
   if (digitalRead(ENC_B))
@@ -70,6 +83,7 @@ void loop() {
     digitalWrite(TRIAL_OUT, 0);
     digitalWrite(CS_OUT, 0);
     digitalWrite(US_OUT, 0);
+    digitalWrite(WAS_STILL_OUT, 0);
  
     state = S_IDLE;
   }
@@ -90,23 +104,29 @@ void loop() {
         break;
 
       case S_BEGIN_TRIAL:
+        enable_cs = true;
+        enable_us = true;
+        was_still = false;
+      
         digitalWrite(TRIAL_OUT, 1);
         state = S_CS;
         break;
 
       case S_CS:
-        enable_cs = true;
-        enable_us = true;
         cs_elapsed_time = 0;
         
         while (cs_elapsed_time < CS_DURATION) {
           digitalWrite(CS_OUT, enable_cs);
           digitalWrite(US_OUT, (cs_elapsed_time >= CS_GRACE) && enable_us);
+          digitalWrite(WAS_STILL_OUT, was_still);
           
           steps_fwd = 0;
           steps_bwd = 0;
           delay(CS_POLL_RATE);
-          if (steps_fwd - steps_bwd > THRESHOLD_STEPS) {
+          if (abs(steps_fwd) + abs(steps_bwd) < STILL_THRESHOLD) {
+            was_still = true;
+          }
+          if (was_still && (steps_fwd - steps_bwd > RUNNING_THRESHOLD)) {
             enable_cs = false;
             enable_us = false;
           }
@@ -120,6 +140,7 @@ void loop() {
         digitalWrite(US_OUT, 0);
         digitalWrite(CS_OUT, 0);
         digitalWrite(TRIAL_OUT, 0);
+        digitalWrite(WAS_STILL_OUT, 0);
         state = S_POST;
         break;
 
