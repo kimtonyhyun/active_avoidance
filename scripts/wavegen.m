@@ -1,3 +1,5 @@
+%% sinusoid
+
 Fs = 44100; % Hz
 T = 5; % Length of track, s
 
@@ -9,3 +11,16 @@ y = int16(y);
 
 ys = [y' y']; % Stereo
 audiowrite('001_sweep.wav', ys, Fs);
+
+
+%% white noise
+
+Fs = 44100; % Hz
+T = 5; % Length of track, s
+
+y = 3000*randn(1,T*Fs);
+
+y = int16(y);
+
+ys = [y' y']; % Stereo
+audiowrite('002_whitenoise.wav', ys, Fs);
