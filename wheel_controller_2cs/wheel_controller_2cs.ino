@@ -1,6 +1,3 @@
-// Tony Hyun Kim
-// June 25, 2020
-
 // Pins
 //------------------------------------------------------------
 #define START_TRIALS 13
@@ -12,7 +9,7 @@
 #define CS_OUT 27
 #define US_OUT 29
 #define ITI_OUT 5
-#define FORCED_TRIAL_OUT 23
+#define FORCED_CS_OUT 23
 
 // Behavioral parameters
 //------------------------------------------------------------
@@ -65,11 +62,11 @@ void setup() {
   pinMode(ENC_B, INPUT);
   pinMode(ENC_I, INPUT);
 
-  pinMode(FORCED_TRIAL_OUT, OUTPUT);
   pinMode(TRIAL_OUT, OUTPUT);
   pinMode(CS_OUT, OUTPUT);
   pinMode(US_OUT, OUTPUT);
   pinMode(ITI_OUT, OUTPUT);
+  pinMode(FORCED_CS_OUT, OUTPUT);
   
   state = S_IDLE;
 }
@@ -93,7 +90,7 @@ void loop() {
     digitalWrite(CS_OUT, 0);
     digitalWrite(US_OUT, 0);
     digitalWrite(ITI_OUT, 0);
-    digitalWrite(FORCED_TRIAL_OUT, 0);
+    digitalWrite(FORCED_CS_OUT, 0);
  
     state = S_IDLE;
   }
@@ -131,7 +128,6 @@ void loop() {
         enable_cs = true;
         enable_us = true;
 
-        digitalWrite(FORCED_TRIAL_OUT, is_forced_trial);
         digitalWrite(TRIAL_OUT, 1);
         
         state = S_CS;
@@ -141,7 +137,11 @@ void loop() {
         elapsed_time = 0;
         
         while (elapsed_time < CS_DURATION) {
-          digitalWrite(CS_OUT, enable_cs);
+          if (is_forced_trial)
+            digitalWrite(FORCED_CS_OUT, 1);
+          else
+            digitalWrite(CS_OUT, enable_cs);
+            
           digitalWrite(US_OUT, (elapsed_time >= CS_GRACE) && enable_us);
           
           steps_fwd = 0;
@@ -160,8 +160,8 @@ void loop() {
       case S_END_TRIAL:
         digitalWrite(US_OUT, 0);
         digitalWrite(CS_OUT, 0);
+        digitalWrite(FORCED_CS_OUT, 0);
         digitalWrite(TRIAL_OUT, 0);
-        digitalWrite(FORCED_TRIAL_OUT, 0);
         state = S_ITI;
         break;
 
