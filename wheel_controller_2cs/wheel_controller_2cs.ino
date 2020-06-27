@@ -16,8 +16,8 @@
 #define INITIAL_DELAY 2000 // Delay after turning on manual switch, ms
 
 #define CS_DURATION 4000 // ms
-#define CS_GRACE 3500 // Grace period, ms. US will be disabled during 
-                      //  the initial CS_GRACE of a CS presentation
+#define US_DURATION 500 // ms, Applied at end of CS_DURATION
+#define CS_GRACE CS_DURATION-US_DURATION // US will not be applied during this time
 
 #define ITI_MIN 5000 // ms, Needs to be larger than STILL_DURATION
 #define ITI_MAX 15000
@@ -38,13 +38,14 @@
 // If the mouse has not satisfied the "still" condition in "FORCED_TRIAL_THRESHOLD"
 // milliseconds, then apply forced trial.
 #define FORCED_TRIAL_THRESHOLD 25000 // ms
+#define FORCED_CS_DURATION 2000
 
 // FSM definitions
 //------------------------------------------------------------
 #define S_IDLE 0
 #define S_WAIT_FOR_STILL 1
-#define S_BEGIN_TRIAL 2
 #define S_CS 3
+#define S_FORCED_CS 4
 #define S_END_TRIAL 5
 #define S_ITI 7
 
@@ -52,7 +53,6 @@ int state = S_IDLE;
 int elapsed_time;
 bool enable_cs;
 bool enable_us;
-bool is_forced_trial;
 
 void setup() {
   // put your setup code here, to run once:
@@ -98,62 +98,60 @@ void loop() {
     // Implement FSM
     switch (state) {
       case S_IDLE:
-        // After the START_TRIALS signals is given, wait 2 sec prior
-        // to launching trials
+        // After the START_TRIALS signals is given, wait before launching trials
         delay(INITIAL_DELAY);
         state = S_WAIT_FOR_STILL;
         break;
         
       case S_WAIT_FOR_STILL:
-        is_forced_trial = true;
+        // By "default" a forced trial will be given unless the animal satisfies
+        // the still condition, as below
+        state = S_FORCED_CS;
+        
+        // Check for "still condition" before the time is up
         elapsed_time = 0;
-
-        // The mouse has a finite window of time to receive a regular trial, where
-        // the US can be turned off by movement.
         while (elapsed_time < FORCED_TRIAL_THRESHOLD) {
           steps_fwd = 0;
           steps_bwd = 0;
           delay(STILL_DURATION);
           if (abs(steps_fwd) + abs(steps_bwd) < STILL_THRESHOLD) {
-            is_forced_trial = false;
+            state = S_CS;
             break; // Stop waiting
           }
           elapsed_time += STILL_DURATION;
         }
 
-        state = S_BEGIN_TRIAL;        
-        break;
-
-      case S_BEGIN_TRIAL:
-        enable_cs = true;
-        enable_us = true;
-
         digitalWrite(TRIAL_OUT, 1);
-        
-        state = S_CS;
         break;
 
       case S_CS:
-        elapsed_time = 0;
+        enable_cs = true;
+        enable_us = true;
         
+        elapsed_time = 0;
         while (elapsed_time < CS_DURATION) {
-          if (is_forced_trial)
-            digitalWrite(FORCED_CS_OUT, 1);
-          else
-            digitalWrite(CS_OUT, enable_cs);
-            
+          digitalWrite(CS_OUT, enable_cs);
           digitalWrite(US_OUT, (elapsed_time >= CS_GRACE) && enable_us);
           
           steps_fwd = 0;
           steps_bwd = 0;
           delay(CS_POLL_RATE);
-          if (!is_forced_trial && (steps_fwd - steps_bwd > RUNNING_THRESHOLD)) {
+          if (steps_fwd - steps_bwd > RUNNING_THRESHOLD) {
             enable_cs = false;
             enable_us = false;
           }
           
           elapsed_time += CS_POLL_RATE; 
         }
+        state = S_END_TRIAL;
+        break;
+
+      case S_FORCED_CS:
+        digitalWrite(FORCED_CS_OUT, 1);
+        delay(FORCED_CS_DURATION - US_DURATION);
+        digitalWrite(US_OUT, 1);
+        delay(US_DURATION);
+        
         state = S_END_TRIAL;
         break;
 
