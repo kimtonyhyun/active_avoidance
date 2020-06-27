@@ -18,7 +18,7 @@ audiowrite('001_sweep.wav', ys, Fs);
 Fs = 44100; % Hz
 T = 5; % Length of track, s
 
-y = 3000*randn(1,T*Fs);
+y = 8000*randn(1,T*Fs);
 
 y = int16(y);
 
